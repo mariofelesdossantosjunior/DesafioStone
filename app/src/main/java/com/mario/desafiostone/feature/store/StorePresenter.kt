@@ -9,7 +9,7 @@ import rx.subscriptions.CompositeSubscription
 /**
  * Created by mario on 9/28/17.
  */
-class StorePresenter: BasePresenterImpl<StoreContract.View>(), StoreContract.Presenter {
+class StorePresenter : BasePresenterImpl<StoreContract.View>(), StoreContract.Presenter {
 
     val compositeSubscription: CompositeSubscription = CompositeSubscription()
 
@@ -22,8 +22,8 @@ class StorePresenter: BasePresenterImpl<StoreContract.View>(), StoreContract.Pre
                 stoneService.listProducts()
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({ mView?.showProducts(it)},
-                                   {erro -> mView?.showError(erro.message!!)})
+                        .subscribe({ mView?.showProducts(it) },
+                                { erro -> mView?.showError(erro.message!!) })
         )
     }
 

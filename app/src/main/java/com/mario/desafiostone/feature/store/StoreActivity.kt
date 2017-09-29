@@ -4,18 +4,23 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.GridLayout
 import android.widget.Toast
 import com.mario.desafiostone.R
 import com.mario.desafiostone.data.remote.Product
 import com.mario.desafiostone.feature.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class StoreActivity : BaseActivity<StoreContract.View,
-        StorePresenter>(),
+/**
+ * Created by mario on 9/24/17.
+ */
+
+class StoreActivity : BaseActivity<StoreContract.View, StorePresenter>(),
         StoreContract.View,
         BottomNavigationView.OnNavigationItemSelectedListener{
 
@@ -46,26 +51,26 @@ class StoreActivity : BaseActivity<StoreContract.View,
         hideProgress()
     }
 
-    private fun hideProgress() {
+    override fun hideProgress() {
         progressBar.visibility = View.GONE
         rc_products.visibility = View.VISIBLE
     }
 
-    private fun showProgress() {
+    override fun showProgress() {
         progressBar.visibility = View.VISIBLE
     }
 
     private fun setRecycleView() {
         rc_products.setHasFixedSize(true)
-        rc_products.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        rc_products.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        rc_products.layoutManager = GridLayoutManager(this,2)
+        rc_products.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL))
         rc_products.adapter = mAdapter
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navigation_store -> {
-                 Toast.makeText(this,"Store Select",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Store Select",Toast.LENGTH_LONG).show()
                 return true
             }
             R.id.navigation_cart -> {

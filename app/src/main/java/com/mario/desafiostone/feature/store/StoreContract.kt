@@ -11,6 +11,8 @@ object StoreContract {
 
     interface View : BaseView{
         fun showProducts(products: MutableList<Product>)
+        fun showProgress()
+        fun hideProgress()
     }
 
     interface Presenter : BasePresenter<View>{

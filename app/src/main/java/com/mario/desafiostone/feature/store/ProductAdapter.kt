@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import com.mario.desafiostone.R
 import com.mario.desafiostone.data.remote.Product
 import com.mario.desafiostone.util.inflate
+import com.mario.desafiostone.util.intFormat
+import com.mario.desafiostone.util.loadUrl
 import kotlinx.android.synthetic.main.item_product.view.*
 
 /**
@@ -29,7 +31,10 @@ class ProductAdapter(private val listener: (Product) -> Unit)
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(product: Product, listener: (Product) -> Unit) = with(itemView) {
-        item_product_title.text = product.title
+        tv_item_product_title.text = product.title
+        tv_item_product_seller.text = product.seller
+        tv_item_product_price.text = product.price.intFormat()
+        img_item_product_image.loadUrl(product.thumbnailHd)
         setOnClickListener { listener(product) }
     }
 }
