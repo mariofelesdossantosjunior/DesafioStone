@@ -1,6 +1,6 @@
 # DesafioStone
-init Commits
-[StoneSDK](https://cloud.githubusercontent.com/assets/2567823/11539067/6300c838-990c-11e5-9831-4f8ce691859e.png)
+Este projeto foi desenvolvido referente a vaga de Desenvovedor Android Stone Pagamentos
+![StoneSDK](https://cloud.githubusercontent.com/assets/2567823/11539067/6300c838-990c-11e5-9831-4f8ce691859e.png)
 
 # Desafio Mobile
 
