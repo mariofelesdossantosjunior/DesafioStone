@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.mario.desafiostone.feature.store.StoreActivity"
     tools:layout_editor_absoluteX="0dp"
+    android:animateLayoutChanges="true"
+    android:background="@color/gray"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.design.widget.BottomNavigationView

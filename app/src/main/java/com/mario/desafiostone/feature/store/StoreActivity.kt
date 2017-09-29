@@ -63,7 +63,6 @@ class StoreActivity : BaseActivity<StoreContract.View, StorePresenter>(),
     private fun setRecycleView() {
         rc_products.setHasFixedSize(true)
         rc_products.layoutManager = GridLayoutManager(this,2)
-        rc_products.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL))
         rc_products.adapter = mAdapter
     }
 
