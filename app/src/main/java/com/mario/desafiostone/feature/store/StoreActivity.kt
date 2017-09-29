@@ -41,8 +41,8 @@ class StoreActivity : BaseActivity<StoreContract.View,
 
 
     override fun showProducts(products: MutableList<Product>) {
-        mAdapter?.products = products
-        mAdapter?.notifyDataSetChanged()
+        mAdapter.products = products
+        mAdapter.notifyDataSetChanged()
         hideProgress()
     }
 
